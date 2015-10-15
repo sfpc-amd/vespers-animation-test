@@ -74,6 +74,7 @@
 		C11E16741BCE6EE800D6E6FD /* ofxMSATimer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11E16721BCE6EE800D6E6FD /* ofxMSATimer.cpp */; };
 		C11E16791BCE6EE800D6E6FD /* ofxTimecode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11E16771BCE6EE800D6E6FD /* ofxTimecode.cpp */; };
 		C11E167E1BCE6EE800D6E6FD /* ofxTextInputField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C11E167C1BCE6EE800D6E6FD /* ofxTextInputField.cpp */; };
+		C1551D361BD041DC00BBA99A /* ofxAutoReloadedShader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C1551D341BD041DC00BBA99A /* ofxAutoReloadedShader.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
 		E45BE97C0E8CC7DD009D7055 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9720E8CC7DD009D7055 /* ApplicationServices.framework */; };
@@ -260,6 +261,21 @@
 		C11E16781BCE6EE800D6E6FD /* ofxTimecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTimecode.h; sourceTree = "<group>"; };
 		C11E167C1BCE6EE800D6E6FD /* ofxTextInputField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTextInputField.cpp; sourceTree = "<group>"; };
 		C11E167D1BCE6EE800D6E6FD /* ofxTextInputField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTextInputField.h; sourceTree = "<group>"; };
+		C1551D341BD041DC00BBA99A /* ofxAutoReloadedShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAutoReloadedShader.cpp; sourceTree = "<group>"; };
+		C1551D351BD041DC00BBA99A /* ofxAutoReloadedShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAutoReloadedShader.h; sourceTree = "<group>"; };
+		C1551D381BD0427800BBA99A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		C1551D391BD0427800BBA99A /* _Page_One_trackPositions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = _Page_One_trackPositions.xml; sourceTree = "<group>"; };
+		C1551D3B1BD0427800BBA99A /* defaultColorPalette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultColorPalette.png; sourceTree = "<group>"; };
+		C1551D3C1BD0427800BBA99A /* defaultColors.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = defaultColors.xml; sourceTree = "<group>"; };
+		C1551D3D1BD0427800BBA99A /* NewMedia Fett.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewMedia Fett.ttf"; sourceTree = "<group>"; };
+		C1551D3F1BD0427800BBA99A /* timeline0_Page_One_trackPositions.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timeline0_Page_One_trackPositions.xml; sourceTree = "<group>"; };
+		C1551D401BD0427800BBA99A /* timeline0_Triangle_Rotation.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timeline0_Triangle_Rotation.xml; sourceTree = "<group>"; };
+		C1551D411BD0427800BBA99A /* timeline0_Triangle_Scale.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timeline0_Triangle_Scale.xml; sourceTree = "<group>"; };
+		C1551D421BD0427800BBA99A /* timeline0_zoomer.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = timeline0_zoomer.xml; sourceTree = "<group>"; };
+		C1551D441BD042CC00BBA99A /* HWYGOTH.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = HWYGOTH.TTF; sourceTree = "<group>"; };
+		C1551D461BD042DF00BBA99A /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
+		C1551D471BD042E900BBA99A /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		C1551D491BD048B500BBA99A /* shader.geom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.geom; sourceTree = "<group>"; };
 		C70D8946940288799E82131E /* ofxSliderGroup.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxSliderGroup.h; path = ../../../addons/ofxGui/src/ofxSliderGroup.h; sourceTree = SOURCE_ROOT; };
 		C88333E71C9457E441C33474 /* ofxButton.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxButton.cpp; path = ../../../addons/ofxGui/src/ofxButton.cpp; sourceTree = SOURCE_ROOT; };
 		E112B3AEBEA2C091BF2B40AE /* ofxPanel.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxPanel.cpp; path = ../../../addons/ofxGui/src/ofxPanel.cpp; sourceTree = SOURCE_ROOT; };
@@ -365,6 +381,7 @@
 				C11E16701BCE6EE800D6E6FD /* ofxMSATimer */,
 				C11E16751BCE6EE800D6E6FD /* ofxTimecode */,
 				C11E167A1BCE6EE800D6E6FD /* ofxTextInputField */,
+				C1551D321BD041DC00BBA99A /* ofxAutoReloadedShader */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -816,6 +833,69 @@
 			path = ../../../addons/ofxTextInputField/src;
 			sourceTree = "<group>";
 		};
+		C1551D321BD041DC00BBA99A /* ofxAutoReloadedShader */ = {
+			isa = PBXGroup;
+			children = (
+				C1551D331BD041DC00BBA99A /* src */,
+			);
+			name = ofxAutoReloadedShader;
+			sourceTree = "<group>";
+		};
+		C1551D331BD041DC00BBA99A /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C1551D341BD041DC00BBA99A /* ofxAutoReloadedShader.cpp */,
+				C1551D351BD041DC00BBA99A /* ofxAutoReloadedShader.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxAutoReloadedShader/src;
+			sourceTree = "<group>";
+		};
+		C1551D371BD0427800BBA99A /* data */ = {
+			isa = PBXGroup;
+			children = (
+				C1551D431BD042CC00BBA99A /* fonts */,
+				C1551D451BD042CC00BBA99A /* shaders */,
+				C1551D381BD0427800BBA99A /* .gitkeep */,
+				C1551D391BD0427800BBA99A /* _Page_One_trackPositions.xml */,
+				C1551D3A1BD0427800BBA99A /* GUI */,
+				C1551D3F1BD0427800BBA99A /* timeline0_Page_One_trackPositions.xml */,
+				C1551D401BD0427800BBA99A /* timeline0_Triangle_Rotation.xml */,
+				C1551D411BD0427800BBA99A /* timeline0_Triangle_Scale.xml */,
+				C1551D421BD0427800BBA99A /* timeline0_zoomer.xml */,
+			);
+			name = data;
+			path = bin/data;
+			sourceTree = "<group>";
+		};
+		C1551D3A1BD0427800BBA99A /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				C1551D3B1BD0427800BBA99A /* defaultColorPalette.png */,
+				C1551D3C1BD0427800BBA99A /* defaultColors.xml */,
+				C1551D3D1BD0427800BBA99A /* NewMedia Fett.ttf */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		C1551D431BD042CC00BBA99A /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C1551D441BD042CC00BBA99A /* HWYGOTH.TTF */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		C1551D451BD042CC00BBA99A /* shaders */ = {
+			isa = PBXGroup;
+			children = (
+				C1551D461BD042DF00BBA99A /* shader.vert */,
+				C1551D471BD042E900BBA99A /* shader.frag */,
+				C1551D491BD048B500BBA99A /* shader.geom */,
+			);
+			path = shaders;
+			sourceTree = "<group>";
+		};
 		E4328144138ABC890047C5CB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,6 +916,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
+				C1551D371BD0427800BBA99A /* data */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4EB6923138AFD0F00A09F29 /* Project.xcconfig */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
@@ -975,6 +1056,7 @@
 				C11E16631BCE6EE800D6E6FD /* ofxEasingCirc.cpp in Sources */,
 				C11E16171BCE6EE800D6E6FD /* ofxTLColorTrack.cpp in Sources */,
 				C11E16241BCE6EE800D6E6FD /* ofxTLSwitches.cpp in Sources */,
+				C1551D361BD041DC00BBA99A /* ofxAutoReloadedShader.cpp in Sources */,
 				5CBB2AB3A60F65431D7B555D /* ofxButton.cpp in Sources */,
 				C11E16211BCE6EE800D6E6FD /* ofxTLLFO.cpp in Sources */,
 				C11E166A1BCE6EE800D6E6FD /* ofxEasingQuint.cpp in Sources */,
@@ -1188,7 +1270,7 @@
 					/Users/amdayton/Code/ofx/0.8.4/addons/ofxTimeline/libs/sndfile/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1281,7 +1363,7 @@
 					/Users/amdayton/Code/ofx/0.8.4/addons/ofxTimeline/libs/sndfile/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

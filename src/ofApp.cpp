@@ -9,9 +9,17 @@ void ofApp::setup(){
     
     bShowTimeline = true;
     
-	highwayGothic.loadFont("HWYGOTH.TTF", 20, true, true);
+	highwayGothic.loadFont("fonts/HWYGOTH.TTF", 20, true, true);
 	highwayGothic.setLineHeight(22.0f);
 	highwayGothic.setLetterSpacing(1.037);
+    
+    shader.setGeometryInputType(GL_LINES);
+    shader.setGeometryOutputCount(1024);
+    shader.setGeometryOutputType(GL_LINE_STRIP);
+    shader.load("shaders/shader");
+
+
+    printf("Max number verices: %i", shader.getGeometryMaxOutputCount());
     
     
 //	timeline.setup();
@@ -31,8 +39,8 @@ void ofApp::setup(){
     
     gui.setup();
     gui.add(triangleRadius.setup("Triangle Radius", ofGetHeight()/3, 0.0, ofGetWidth()));
-    gui.add(moireSpacing.setup("Moire Spacing", 0.0, 0.0, 10.0));
-    gui.add(moireAmount.setup("Moire Amount", 0.0, 0.0, 100.0));
+    gui.add(moireSpacing.setup("Moire Spacing", 1, 0, 360));
+    gui.add(moireAmount.setup("Moire Amount", 10, 0, 1024));
 
     ofBackground(0);
     
@@ -41,6 +49,35 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+
+   shader.begin();
+        shader.setUniform4f(
+            "iMouse"
+            , mouseX
+            , mouseY
+            , 0.0
+            , 0.0
+        );
+        shader.setUniform3f(
+            "iResolution"
+            , ofGetWidth()
+            , ofGetHeight()
+            , 0.0
+        );
+        shader.setUniform1f(
+            "iGlobalTime"
+            , ofGetElapsedTimef()
+        );// elapsed time
+        shader.setUniform1i(
+            "moireSpacing"
+            , moireSpacing
+        );
+        shader.setUniform1i(
+            "moireAmount"
+            , moireAmount
+        );
+    shader.end();
+
 }
 
 //--------------------------------------------------------------
@@ -52,6 +89,7 @@ void ofApp::draw(){
 //    rotations.push_back(tRotation);
     
 //    for(int i = 0; i < rotations.size() ;i++) {
+
     ofPushMatrix();
         ofSetColor(255);
         ofNoFill();
@@ -63,13 +101,14 @@ void ofApp::draw(){
         ofPoint p1 = ofPoint(cos(ofDegToRad(0-90))*radius, sin(ofDegToRad(0-90))*radius);
         ofPoint p2 = ofPoint(cos(ofDegToRad(120-90))*radius, sin(ofDegToRad(120-90))*radius);
         ofPoint p3 = ofPoint(cos(ofDegToRad(240-90))*radius, sin(ofDegToRad(240-90))*radius);
-        
-        ofTriangle(p1, p2, p3);
-        
+    
         ofLine(ofPoint(0, -ofGetHeight()/2), p1);
         ofLine(ofPoint(ofGetWidth()/2, ofGetHeight()/2), p2);
         ofLine(ofPoint(-ofGetWidth()/2, ofGetHeight()/2), p3);
-
+    
+        shader.begin();
+            ofTriangle(p1, p2, p3);
+        shader.end();
 
 //        drawEquilateralTriangle(ofPoint(0, 0), tScale);
     ofPopMatrix();

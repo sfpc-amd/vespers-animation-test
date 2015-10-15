@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "ofxTimeline.h"
 #include "ofxGui.h"
+#include "ofxAutoReloadedShader.h"
 
 class ofApp : public ofBaseApp{
 
@@ -18,8 +19,10 @@ class ofApp : public ofBaseApp{
     
         ofxPanel gui;
         ofxFloatSlider triangleRadius;
-        ofxFloatSlider moireSpacing;
-        ofxFloatSlider moireAmount;
+        ofxIntSlider moireSpacing;
+        ofxIntSlider moireAmount;
+    
+        ofxAutoReloadedShader shader;
     
     
 		void setup();
