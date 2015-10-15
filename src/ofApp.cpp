@@ -19,6 +19,9 @@ void ofApp::setup(){
     shader.load("shaders/shader");
 
 
+    cam.setDesiredFrameRate(30);
+	cam.initGrabber(640,480);
+
     printf("Max number verices: %i", shader.getGeometryMaxOutputCount());
     
     
@@ -49,6 +52,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
+	cam.update();
 
    shader.begin();
         shader.setUniform4f(
@@ -122,6 +126,9 @@ void ofApp::draw(){
     
             ofPopMatrix();
             ofSetColor(255);
+
+            cam.draw(0, 0, ofGetWidth(), ofGetHeight());
+
 
         shader.end();
 

@@ -15,7 +15,7 @@ class ofApp : public ofBaseApp{
     
 //        ofxTimeline timeline;
     
-        vector<float> rotations;
+//        vector<float> rotations;
     
 		ofxCenteredTrueTypeFont typeface;
     
@@ -25,7 +25,7 @@ class ofApp : public ofBaseApp{
         ofxFloatSlider moireAmount;
     
         ofxAutoReloadedShader shader;
-    
+        ofVideoGrabber cam;
     
 		void setup();
 		void update();
