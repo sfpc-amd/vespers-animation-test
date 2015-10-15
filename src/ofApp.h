@@ -11,6 +11,11 @@ class ofApp : public ofBaseApp{
     
         ofxTimeline timeline;
     
+        vector<float> rotations;
+    
+		ofTrueTypeFont  highwayGothic;
+    
+    
 		void setup();
 		void update();
 		void draw();
