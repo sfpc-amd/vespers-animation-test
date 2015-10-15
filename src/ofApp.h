@@ -25,7 +25,7 @@ class ofApp : public ofBaseApp{
         ofxFloatSlider moireAmount;
     
         ofxAutoReloadedShader shader;
-        ofVideoGrabber cam;
+//        ofVideoGrabber cam;
     
 		void setup();
 		void update();
