@@ -9,9 +9,9 @@ void ofApp::setup(){
     
     bShowTimeline = true;
     
-	highwayGothic.loadFont("fonts/HWYGOTH.TTF", 20, true, true);
-	highwayGothic.setLineHeight(22.0f);
-	highwayGothic.setLetterSpacing(1.037);
+	typeface.loadFont("fonts/UnicaOne-Regular.ttf", 64, true, true);
+	typeface.setLineHeight(22.0f);
+	typeface.setLetterSpacing(1.037);
     
     shader.setGeometryInputType(GL_LINES);
     shader.setGeometryOutputCount(1024);
@@ -39,8 +39,8 @@ void ofApp::setup(){
     
     gui.setup();
     gui.add(triangleRadius.setup("Triangle Radius", ofGetHeight()/3, 0.0, ofGetWidth()));
-    gui.add(moireSpacing.setup("Moire Spacing", 1, 0, 360));
-    gui.add(moireAmount.setup("Moire Amount", 10, 0, 1024));
+    gui.add(moireSpacing.setup("Moire Spacing", 1.0, 0.0, 45.0));
+    gui.add(moireAmount.setup("Moire Amount", 1.0, 0.0, 100.0));
 
     ofBackground(0);
     
@@ -82,7 +82,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    
+    ofClear(0);
 //    float tScale = timeline.getValue("Triangle Scale");
 //    float tRotation = timeline.getValue("Triangle Rotation");
     
@@ -90,37 +90,44 @@ void ofApp::draw(){
     
 //    for(int i = 0; i < rotations.size() ;i++) {
 
-    ofPushMatrix();
-        ofSetColor(255);
-        ofNoFill();
-        ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
 //        ofRotate(rotations[i]);
 
         float radius = triangleRadius;
-        
-        ofPoint p1 = ofPoint(cos(ofDegToRad(0-90))*radius, sin(ofDegToRad(0-90))*radius);
-        ofPoint p2 = ofPoint(cos(ofDegToRad(120-90))*radius, sin(ofDegToRad(120-90))*radius);
-        ofPoint p3 = ofPoint(cos(ofDegToRad(240-90))*radius, sin(ofDegToRad(240-90))*radius);
     
-        ofLine(ofPoint(0, -ofGetHeight()/2), p1);
-        ofLine(ofPoint(ofGetWidth()/2, ofGetHeight()/2), p2);
-        ofLine(ofPoint(-ofGetWidth()/2, ofGetHeight()/2), p3);
-    
+
         shader.begin();
-            ofTriangle(p1, p2, p3);
+    
+            ofPushMatrix();
+            ofSetColor(255);
+            ofNoFill();
+            ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
+
+    
+            for(int i = 0; i < moireAmount; i++) {
+                ofPoint p1 = ofPoint(cos(ofDegToRad(0-90))*radius, sin(ofDegToRad(0-90))*radius);
+                ofPoint p2 = ofPoint(cos(ofDegToRad(120-90))*radius, sin(ofDegToRad(120-90))*radius);
+                ofPoint p3 = ofPoint(cos(ofDegToRad(240-90))*radius, sin(ofDegToRad(240-90))*radius);
+            
+        
+                ofPushMatrix();
+                    ofRotate(i*moireAmount*moireSpacing, 0, 0, 1);
+                    ofTriangle(p1, p2, p3);
+                ofPopMatrix();
+                
+                ofLine(ofPoint(0, -ofGetHeight()/2), p1);
+                ofLine(ofPoint(ofGetWidth()/2, ofGetHeight()/2), p2);
+                ofLine(ofPoint(-ofGetWidth()/2, ofGetHeight()/2), p3);
+            }
+    
+    
+            ofPopMatrix();
+            ofSetColor(255);
+
         shader.end();
 
-//        drawEquilateralTriangle(ofPoint(0, 0), tScale);
-    ofPopMatrix();
-//    }
-    
-//    ofPushMatrix();
-//        ofSetColor(255);
-//        string title = "vespers";
-//        ofRectangle bounds = highwayGothic.getStringBoundingBox(title, 0, 0);
-//        highwayGothic.drawString("vespers", ofGetWidth()/2 - bounds.x/2, ofGetHeight()/2-bounds.y/2);
-//    ofPopMatrix();
 
+        typeface.drawStringCentered("VESPERS", ofGetWidth()/2, ofGetHeight()/2);
+    
     if(bShowTimeline) {
 //        timeline.draw();
     }

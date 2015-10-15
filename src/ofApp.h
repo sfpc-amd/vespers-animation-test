@@ -4,6 +4,8 @@
 #include "ofxTimeline.h"
 #include "ofxGui.h"
 #include "ofxAutoReloadedShader.h"
+#include "ofxCenteredTrueTypeFont.h"
+
 
 class ofApp : public ofBaseApp{
 
@@ -15,12 +17,12 @@ class ofApp : public ofBaseApp{
     
         vector<float> rotations;
     
-		ofTrueTypeFont  highwayGothic;
+		ofxCenteredTrueTypeFont typeface;
     
         ofxPanel gui;
         ofxFloatSlider triangleRadius;
-        ofxIntSlider moireSpacing;
-        ofxIntSlider moireAmount;
+        ofxFloatSlider moireSpacing;
+        ofxFloatSlider moireAmount;
     
         ofxAutoReloadedShader shader;
     

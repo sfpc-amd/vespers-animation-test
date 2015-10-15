@@ -37,22 +37,22 @@ uniform int moireSpacing;
    }
    EndPrimitive();
    //New piece of geometry!
-    for(j=0; j < moireAmount; j++) {
-
-   for(i = 0; i < gl_VerticesIn; i++)
-   {
-            vertex = gl_PositionIn[i];
-
-            vertex = vertex + vec4(
-                j*moireSpacing*0.1,
-                j*moireSpacing*0.1,
-                0.0,
-            0.0);
-
-            gl_Position = vertex;
-            EmitVertex();
-        }
-   EndPrimitive();
+//    for(j=0; j < moireAmount; j++) {
+//
+//   for(i = 0; i < gl_VerticesIn; i++)
+//   {
+//            vertex = gl_PositionIn[i];
+//
+//            vertex = vertex + vec4(
+//                j*moireSpacing*0.1,
+//                j*moireSpacing*0.1,
+//                0.0,
+//            0.0);
+//
+//            gl_Position = vertex;
+//            EmitVertex();
+//        }
+//   EndPrimitive();
 
    }
  }

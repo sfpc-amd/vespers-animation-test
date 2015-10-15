@@ -16,7 +16,8 @@ void main()
 //    position.x = sin(iGlobalTime*position.x/10.0) * faceEyebrowLeft *10.0 + position.x;
 //    position.y = cos(iGlobalTime*position.y/10.0) * faceEyebrowRight * 10.0 + position.y;
 
-    texCoordVarying = gl_MultiTexCoord0.xy;
+//    texCoordVarying = gl_MultiTexCoord0.xy;
 
     gl_Position = position;
 }
+

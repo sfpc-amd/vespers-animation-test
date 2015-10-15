@@ -261,6 +261,8 @@
 		C11E16781BCE6EE800D6E6FD /* ofxTimecode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTimecode.h; sourceTree = "<group>"; };
 		C11E167C1BCE6EE800D6E6FD /* ofxTextInputField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxTextInputField.cpp; sourceTree = "<group>"; };
 		C11E167D1BCE6EE800D6E6FD /* ofxTextInputField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxTextInputField.h; sourceTree = "<group>"; };
+		C13B62141BD0619B00BF7085 /* ofxCenteredTrueTypeFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxCenteredTrueTypeFont.h; sourceTree = "<group>"; };
+		C13B62151BD061CE00BF7085 /* UnicaOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "UnicaOne-Regular.ttf"; sourceTree = "<group>"; };
 		C1551D341BD041DC00BBA99A /* ofxAutoReloadedShader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxAutoReloadedShader.cpp; sourceTree = "<group>"; };
 		C1551D351BD041DC00BBA99A /* ofxAutoReloadedShader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxAutoReloadedShader.h; sourceTree = "<group>"; };
 		C1551D381BD0427800BBA99A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				C11E16751BCE6EE800D6E6FD /* ofxTimecode */,
 				C11E167A1BCE6EE800D6E6FD /* ofxTextInputField */,
 				C1551D321BD041DC00BBA99A /* ofxAutoReloadedShader */,
+				C13B62121BD0619B00BF7085 /* ofxCenteredTrueTypeFont */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -833,6 +836,23 @@
 			path = ../../../addons/ofxTextInputField/src;
 			sourceTree = "<group>";
 		};
+		C13B62121BD0619B00BF7085 /* ofxCenteredTrueTypeFont */ = {
+			isa = PBXGroup;
+			children = (
+				C13B62131BD0619B00BF7085 /* src */,
+			);
+			name = ofxCenteredTrueTypeFont;
+			sourceTree = "<group>";
+		};
+		C13B62131BD0619B00BF7085 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C13B62141BD0619B00BF7085 /* ofxCenteredTrueTypeFont.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxCenteredTrueTypeFont/src;
+			sourceTree = "<group>";
+		};
 		C1551D321BD041DC00BBA99A /* ofxAutoReloadedShader */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +901,7 @@
 		C1551D431BD042CC00BBA99A /* fonts */ = {
 			isa = PBXGroup;
 			children = (
+				C13B62151BD061CE00BF7085 /* UnicaOne-Regular.ttf */,
 				C1551D441BD042CC00BBA99A /* HWYGOTH.TTF */,
 			);
 			path = fonts;
@@ -1270,7 +1291,7 @@
 					/Users/amdayton/Code/ofx/0.8.4/addons/ofxTimeline/libs/sndfile/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1363,7 +1384,7 @@
 					/Users/amdayton/Code/ofx/0.8.4/addons/ofxTimeline/libs/sndfile/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
