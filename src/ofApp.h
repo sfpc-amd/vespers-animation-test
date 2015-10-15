@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "ofxTimeline.h"
+#include "ofxGui.h"
 
 class ofApp : public ofBaseApp{
 
@@ -9,11 +10,16 @@ class ofApp : public ofBaseApp{
     
         bool bShowTimeline;
     
-        ofxTimeline timeline;
+//        ofxTimeline timeline;
     
         vector<float> rotations;
     
 		ofTrueTypeFont  highwayGothic;
+    
+        ofxPanel gui;
+        ofxFloatSlider triangleRadius;
+        ofxFloatSlider moireSpacing;
+        ofxFloatSlider moireAmount;
     
     
 		void setup();

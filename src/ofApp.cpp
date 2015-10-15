@@ -25,10 +25,15 @@ void ofApp::setup(){
 //    timeline.play();
     
     
-    if(timeline.isDone()) {
+//    if(timeline.isDone()) {
         // delete rotations array?
-    }
+//    }
     
+    gui.setup();
+    gui.add(triangleRadius.setup("Triangle Radius", ofGetHeight()/3, 0.0, ofGetWidth()));
+    gui.add(moireSpacing.setup("Moire Spacing", 0.0, 0.0, 10.0));
+    gui.add(moireAmount.setup("Moire Amount", 0.0, 0.0, 100.0));
+
     ofBackground(0);
     
     
@@ -53,7 +58,7 @@ void ofApp::draw(){
         ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
 //        ofRotate(rotations[i]);
 
-        float radius = ofGetHeight()/3;
+        float radius = triangleRadius;
         
         ofPoint p1 = ofPoint(cos(ofDegToRad(0-90))*radius, sin(ofDegToRad(0-90))*radius);
         ofPoint p2 = ofPoint(cos(ofDegToRad(120-90))*radius, sin(ofDegToRad(120-90))*radius);
@@ -80,6 +85,9 @@ void ofApp::draw(){
     if(bShowTimeline) {
 //        timeline.draw();
     }
+    
+    
+    gui.draw();
 }
 
 
