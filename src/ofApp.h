@@ -12,26 +12,26 @@ class ofApp : public ofBaseApp{
 	public:
     
         bool bShowTimeline;
+        bool bShowGui;
     
 //        ofxTimeline timeline;
     
-//        vector<float> rotations;
-    
 		ofxCenteredTrueTypeFont typeface;
     
+        ofPoint center;
+    
         ofxPanel gui;
-        ofxFloatSlider triangleRadius;
+        ofxFloatSlider triangleZ;
         ofxFloatSlider moireSpacing;
         ofxFloatSlider moireAmount;
     
         ofxAutoReloadedShader shader;
-//        ofVideoGrabber cam;
     
 		void setup();
 		void update();
 		void draw();
     
-        void drawEquilateralTriangle(ofPoint center, float radius);
+//        void drawEquilateralTriangle(ofPoint center, float radius);
 
 		void keyPressed(int key);
 		void keyReleased(int key);

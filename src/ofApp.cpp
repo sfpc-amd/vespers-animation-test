@@ -9,20 +9,16 @@ void ofApp::setup(){
     
     bShowTimeline = true;
     
-	typeface.loadFont("fonts/UnicaOne-Regular.ttf", 64, true, true);
+	typeface.loadFont("fonts/UnicaOne-Regular.ttf", 50, true, true);
 	typeface.setLineHeight(22.0f);
 	typeface.setLetterSpacing(1.037);
     
-    shader.setGeometryInputType(GL_LINES);
-    shader.setGeometryOutputCount(1024);
-    shader.setGeometryOutputType(GL_LINE_STRIP);
+//    shader.setGeometryInputType(GL_LINES);
+//    shader.setGeometryOutputCount(1024);
+//    shader.setGeometryOutputType(GL_LINE_STRIP);
     shader.load("shaders/shader");
 
-
-//    cam.setDesiredFrameRate(30);
-//	cam.initGrabber(640,480);
-
-    printf("Max number verices: %i", shader.getGeometryMaxOutputCount());
+    center = ofPoint(ofGetWidth()/2, ofGetHeight()/2, 0);
     
     
 //	timeline.setup();
@@ -41,19 +37,15 @@ void ofApp::setup(){
 //    }
     
     gui.setup();
-    gui.add(triangleRadius.setup("Triangle Radius", ofGetHeight()/3, 0.0, ofGetWidth()));
-    gui.add(moireSpacing.setup("Moire Spacing", 1.0, 0.0, 45.0));
-    gui.add(moireAmount.setup("Moire Amount", 1.0, 0.0, 100.0));
-
-    ofBackground(0);
+    gui.add(triangleZ.setup("Triangle Z", 0.0, -5000.0, 1000.0));
+    gui.add(moireSpacing.setup("Moire Spacing", 1.0, 1.0, 45.0));
+    gui.add(moireAmount.setup("Moire Amount", 1.0, 1.0, 100.0));
     
     
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-//	cam.update();
-
    shader.begin();
         shader.setUniform4f(
             "iMouse"
@@ -96,44 +88,43 @@ void ofApp::draw(){
 
 //        ofRotate(rotations[i]);
 
-        float radius = triangleRadius;
+        float radius = 2*(ofGetHeight()/5);
     
 
         shader.begin();
     
-            ofPushMatrix();
-            ofSetColor(255);
             ofNoFill();
-            ofTranslate(ofGetWidth()/2, ofGetHeight()/2);
 
     
-            for(int i = 0; i < moireAmount; i++) {
-                ofPoint p1 = ofPoint(cos(ofDegToRad(0-90))*radius, sin(ofDegToRad(0-90))*radius);
-                ofPoint p2 = ofPoint(cos(ofDegToRad(120-90))*radius, sin(ofDegToRad(120-90))*radius);
-                ofPoint p3 = ofPoint(cos(ofDegToRad(240-90))*radius, sin(ofDegToRad(240-90))*radius);
+            for(int i = 0; i < abs(moireAmount); i++) {
+            
+                ofPushMatrix();
+                ofSetColor(255, 255, 255, 0.5);
+
+                ofTranslate(center);
+
+                ofPoint p1 = ofPoint(cos(ofDegToRad(0-90))*radius, sin(ofDegToRad(0-90))*radius, triangleZ);
+                ofPoint p2 = ofPoint(cos(ofDegToRad(120-90))*radius, sin(ofDegToRad(120-90))*radius, triangleZ);
+                ofPoint p3 = ofPoint(cos(ofDegToRad(240-90))*radius, sin(ofDegToRad(240-90))*radius, triangleZ);
             
         
                 ofPushMatrix();
                     ofRotate(i*moireAmount*moireSpacing, 0, 0, 1);
                     ofTriangle(p1, p2, p3);
                 ofPopMatrix();
+                ofPopMatrix();
                 
-                ofLine(ofPoint(0, -ofGetHeight()/2), p1);
-                ofLine(ofPoint(ofGetWidth()/2, ofGetHeight()/2), p2);
-                ofLine(ofPoint(-ofGetWidth()/2, ofGetHeight()/2), p3);
+                ofLine(ofPoint(ofGetWidth()/2, 0, 0), p1 + center);
+                ofLine(ofPoint(ofGetWidth(), ofGetHeight(), 0), p2 + center);
+                ofLine(ofPoint(0, ofGetHeight(), 0), p3 + center);
             }
     
     
-            ofPopMatrix();
-            ofSetColor(255);
-
-//            cam.draw(0, 0, ofGetWidth(), ofGetHeight());
-
 
         shader.end();
 
-
-        typeface.drawStringCentered("VESPERS", ofGetWidth()/2, ofGetHeight()/2);
+        ofSetColor(255);
+        typeface.drawStringCentered("LEVEL 1", center.x, center.y);
     
     if(bShowTimeline) {
 //        timeline.draw();
@@ -144,20 +135,20 @@ void ofApp::draw(){
 }
 
 
-void ofApp::drawEquilateralTriangle(ofPoint center, float radius) {
-    
-    // NOT EQUILATERAL YET
-    // sin(angle) = y/r
-    // y = sin(angle)/r
-    ofPoint p1 = ofPoint(cos(ofDegToRad(0))*radius, sin(ofDegToRad(0))*radius);
-    ofPoint p2 = ofPoint(cos(ofDegToRad(120))*radius, sin(ofDegToRad(120))*radius);
-    ofPoint p3 = ofPoint(cos(ofDegToRad(240))*radius, sin(ofDegToRad(240))*radius);
-    
-    
-    printf("%f %f %f %f %f %f", p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
-    
-    ofTriangle(p1, p2, p3);
-}
+//void ofApp::drawEquilateralTriangle(ofPoint center, float radius) {
+//    
+//    // NOT EQUILATERAL YET
+//    // sin(angle) = y/r
+//    // y = sin(angle)/r
+//    ofPoint p1 = ofPoint(cos(ofDegToRad(0))*radius, sin(ofDegToRad(0))*radius);
+//    ofPoint p2 = ofPoint(cos(ofDegToRad(120))*radius, sin(ofDegToRad(120))*radius);
+//    ofPoint p3 = ofPoint(cos(ofDegToRad(240))*radius, sin(ofDegToRad(240))*radius);
+//    
+//    
+//    printf("%f %f %f %f %f %f", p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
+//    
+//    ofTriangle(p1, p2, p3);
+//}
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
@@ -178,12 +169,11 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+    center = ofPoint(x, y, 0);
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
 }
 
 //--------------------------------------------------------------
