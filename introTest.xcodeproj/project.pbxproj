@@ -279,7 +279,7 @@
 		C1551D441BD042CC00BBA99A /* HWYGOTH.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = HWYGOTH.TTF; sourceTree = "<group>"; };
 		C1551D461BD042DF00BBA99A /* shader.vert */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
 		C1551D471BD042E900BBA99A /* shader.frag */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
-		C1551D491BD048B500BBA99A /* shader.geom */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shader.geom; sourceTree = "<group>"; };
+		C1551D491BD048B500BBA99A /* shader.geom.disabled */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = shader.geom.disabled; sourceTree = "<group>"; };
 		C1B0AE201BD06D2A00EEB6FD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C1B0AE211BD06D2A00EEB6FD /* RELEASE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RELEASE.md; sourceTree = "<group>"; };
 		C1B0AE221BD06D2A00EEB6FD /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
@@ -917,7 +917,7 @@
 			children = (
 				C1551D461BD042DF00BBA99A /* shader.vert */,
 				C1551D471BD042E900BBA99A /* shader.frag */,
-				C1551D491BD048B500BBA99A /* shader.geom */,
+				C1551D491BD048B500BBA99A /* shader.geom.disabled */,
 			);
 			path = shaders;
 			sourceTree = "<group>";

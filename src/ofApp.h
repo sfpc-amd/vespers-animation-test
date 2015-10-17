@@ -14,16 +14,24 @@ class ofApp : public ofBaseApp{
         bool bShowTimeline;
         bool bShowGui;
     
-//        ofxTimeline timeline;
+        ofxTimeline timeline;
     
 		ofxCenteredTrueTypeFont typeface;
     
         ofPoint center;
     
-        ofxPanel gui;
-        ofxFloatSlider triangleZ;
-        ofxFloatSlider moireSpacing;
-        ofxFloatSlider moireAmount;
+//        ofxPanel gui;
+//        ofxFloatSlider triangleZ;
+//        ofxFloatSlider moireSpacing;
+//        ofxFloatSlider moireAmount;
+//        ofxFloatSlider textOpacity;
+
+        float triangleZ;
+        float moireSpacing;
+        float moireAmount;
+        float textOpacity;
+        float shapeOpacity;
+
     
         ofxAutoReloadedShader shader;
     

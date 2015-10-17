@@ -13,39 +13,46 @@ void ofApp::setup(){
 	typeface.setLineHeight(22.0f);
 	typeface.setLetterSpacing(1.037);
     
-//    shader.setGeometryInputType(GL_LINES);
-//    shader.setGeometryOutputCount(1024);
-//    shader.setGeometryOutputType(GL_LINE_STRIP);
     shader.load("shaders/shader");
 
     center = ofPoint(ofGetWidth()/2, ofGetHeight()/2, 0);
     
     
-//	timeline.setup();
-//	timeline.setFrameRate(30);
-//	timeline.setDurationInFrames(570);
-//	timeline.setLoopType(OF_LOOP_NONE);
-//
-//    timeline.addCurves("Triangle Scale", ofRange(1, ofGetWidth()));
-//    timeline.addCurves("Triangle Rotation", ofRange(0, 720));
-//    
-//    timeline.play();
+	timeline.setup();
+	timeline.setFrameRate(60);
+	timeline.setDurationInFrames(200);
+	timeline.setLoopType(OF_LOOP_NORMAL);
+
+    float moireMaxAmount = ofRandom(50.0, 100.0);
+
+    timeline.addCurves("Triangle Z", ofRange(-10000.0, 1000.0));
+    timeline.addCurves("Moire Spacing", ofRange(1.0, 45.0));
+    timeline.addCurves("Moire Amount", ofRange(1.0, moireMaxAmount));
+    timeline.addCurves("Text Opacity", ofRange(1.0, 255.0));
+    timeline.addCurves("Shape Opacity", ofRange(0.0, 1.0));
+
+    
+    timeline.play();
     
     
-//    if(timeline.isDone()) {
-        // delete rotations array?
-//    }
-    
-    gui.setup();
-    gui.add(triangleZ.setup("Triangle Z", 0.0, -5000.0, 1000.0));
-    gui.add(moireSpacing.setup("Moire Spacing", 1.0, 1.0, 45.0));
-    gui.add(moireAmount.setup("Moire Amount", 1.0, 1.0, 100.0));
-    
+//    gui.setup();
+//    gui.add(triangleZ.setup("Triangle Z", 0.0, -10000.0, 1000.0));
+//    gui.add(moireSpacing.setup("Moire Spacing", 1.0, 1.0, 45.0));
+//    gui.add(moireAmount.setup("Moire Amount", 1.0, 1.0, 100.0));
+//    gui.add(textOpacity.setup("Text Opacity", 0.0, 0.0, 255.0));
     
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+
+   triangleZ = timeline.getValue("Triangle Z");
+   moireSpacing = timeline.getValue("Moire Spacing");
+   moireAmount = timeline.getValue("Moire Amount");
+   textOpacity = timeline.getValue("Text Opacity");
+   shapeOpacity = timeline.getValue("Shape Opacity");
+
+
    shader.begin();
         shader.setUniform4f(
             "iMouse"
@@ -72,6 +79,10 @@ void ofApp::update(){
             "moireAmount"
             , moireAmount
         );
+        shader.setUniform1f(
+            "shapeOpacity"
+            , shapeOpacity
+        );
     shader.end();
 
 }
@@ -79,14 +90,6 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(0);
-//    float tScale = timeline.getValue("Triangle Scale");
-//    float tRotation = timeline.getValue("Triangle Rotation");
-    
-//    rotations.push_back(tRotation);
-    
-//    for(int i = 0; i < rotations.size() ;i++) {
-
-//        ofRotate(rotations[i]);
 
         float radius = 2*(ofGetHeight()/5);
     
@@ -123,15 +126,16 @@ void ofApp::draw(){
 
         shader.end();
 
-        ofSetColor(255);
-        typeface.drawStringCentered("LEVEL 1", center.x, center.y);
+        ofSetColor(255, 255, 255, textOpacity);
+        typeface.drawStringCentered("LEVEL 2", center.x, center.y);
     
     if(bShowTimeline) {
-//        timeline.draw();
+        timeline.draw();
     }
     
+//    ofDrawBitmapString(ofToString(ofGetFrameRate()), 20, 20);
     
-    gui.draw();
+//    gui.draw();
 }
 
 
@@ -169,7 +173,7 @@ void ofApp::mouseMoved(int x, int y ){
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-    center = ofPoint(x, y, 0);
+//    center = ofPoint(x, y, 0);
 }
 
 //--------------------------------------------------------------
