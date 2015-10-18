@@ -9,7 +9,7 @@ void ofApp::setup(){
     
     bShowTimeline = true;
     
-	typeface.loadFont("fonts/UnicaOne-Regular.ttf", 50, true, true);
+	typeface.loadFont("fonts/UnicaOne-Regular.ttf", 175, true, true);
 	typeface.setLineHeight(22.0f);
 	typeface.setLetterSpacing(1.037);
     
@@ -127,7 +127,7 @@ void ofApp::draw(){
         shader.end();
 
         ofSetColor(255, 255, 255, textOpacity);
-        typeface.drawStringCentered("LEVEL 2", center.x, center.y);
+        typeface.drawStringCentered("2", center.x, center.y);
     
     if(bShowTimeline) {
         timeline.draw();
