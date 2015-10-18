@@ -1,6 +1,8 @@
 Vespers Intro Test
 ===================
 
+Testing the introduction / in-between sequence for Vespers. See [RELEASE.md](RELEASE.md) for release notes and [VERSION](VERSION) for current version.
+
 Todo
 ----
 
