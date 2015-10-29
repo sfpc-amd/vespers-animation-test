@@ -143,6 +143,7 @@
 		9604B925D32EE39065747725 /* ofxBaseGui.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxBaseGui.cpp; path = ../../../addons/ofxGui/src/ofxBaseGui.cpp; sourceTree = SOURCE_ROOT; };
 		B87C60311EC1FE841C1ECD89 /* ofxLabel.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxLabel.h; path = ../../../addons/ofxGui/src/ofxLabel.h; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
+		C111B9471BE194AE0035210E /* ofxStereoCamera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxStereoCamera.h; sourceTree = "<group>"; };
 		C11E15A51BCE6EE800D6E6FD /* ofxHotKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxHotKeys.h; sourceTree = "<group>"; };
 		C11E15A61BCE6EE800D6E6FD /* ofxHotKeys_impl_linux.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxHotKeys_impl_linux.cpp; sourceTree = "<group>"; };
 		C11E15A71BCE6EE800D6E6FD /* ofxHotKeys_impl_mac.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxHotKeys_impl_mac.mm; sourceTree = "<group>"; };
@@ -390,6 +391,7 @@
 				C11E167A1BCE6EE800D6E6FD /* ofxTextInputField */,
 				C1551D321BD041DC00BBA99A /* ofxAutoReloadedShader */,
 				C13B62121BD0619B00BF7085 /* ofxCenteredTrueTypeFont */,
+				C111B9451BE194AE0035210E /* ofxStereoCamera */,
 			);
 			name = addons;
 			sourceTree = "<group>";
@@ -421,6 +423,23 @@
 				BBAB23BE13894E4700AA2426 /* GLUT.framework */,
 			);
 			name = "3rd party frameworks";
+			sourceTree = "<group>";
+		};
+		C111B9451BE194AE0035210E /* ofxStereoCamera */ = {
+			isa = PBXGroup;
+			children = (
+				C111B9461BE194AE0035210E /* src */,
+			);
+			name = ofxStereoCamera;
+			sourceTree = "<group>";
+		};
+		C111B9461BE194AE0035210E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				C111B9471BE194AE0035210E /* ofxStereoCamera.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxStereoCamera/src;
 			sourceTree = "<group>";
 		};
 		C11E15A31BCE6EE800D6E6FD /* ofxTimeline */ = {
@@ -1301,7 +1320,7 @@
 					/Users/amdayton/Code/ofx/0.8.4/addons/ofxTimeline/libs/sndfile/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)Debug";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1394,7 +1413,7 @@
 					/Users/amdayton/Code/ofx/0.8.4/addons/ofxTimeline/libs/sndfile/lib/osx,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/kiss/include/ ../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/";
+				USER_HEADER_SEARCH_PATHS = "../../../addons/ofxTimeline/libs/openal/include/ ../../../addons/ofxTimeline/libs/sndfile/include/ ../../../addons/ofxTimeline/libs/kiss/include/";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -5,6 +5,7 @@
 #include "ofxGui.h"
 #include "ofxAutoReloadedShader.h"
 #include "ofxCenteredTrueTypeFont.h"
+#include "ofxStereoCamera.h"
 
 
 class ofApp : public ofBaseApp{
@@ -13,6 +14,8 @@ class ofApp : public ofBaseApp{
     
         bool bShowTimeline;
         bool bShowGui;
+    
+        ofxStereoCamera<ofEasyCam> cam;
     
         ofxTimeline timeline;
     
@@ -26,6 +29,9 @@ class ofApp : public ofBaseApp{
 //        ofxFloatSlider moireAmount;
 //        ofxFloatSlider textOpacity;
 
+        float frameWidth;
+        float frameHeight;
+
         float triangleZ;
         float moireSpacing;
         float moireAmount;
@@ -38,6 +44,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+		void drawScene();
     
 //        void drawEquilateralTriangle(ofPoint center, float radius);
 

@@ -2,6 +2,10 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+
+    frameWidth = ofGetWidth() / 2;
+    frameHeight = ofGetHeight() / 2;
+
 	ofSetFrameRate(60);
 	ofSetVerticalSync(true);
     ofEnableSmoothing();
@@ -33,6 +37,14 @@ void ofApp::setup(){
 
     
     timeline.play();
+
+	cam.setup(ofGetWidth(), ofGetHeight());
+	cam.setScale(1, -1, 1);
+	
+	cam.setPhysicalFocusDistance(120);
+	
+	cam.setFocusDistance(50);
+	cam.setNearClip(0.1);
     
     
 //    gui.setup();
@@ -85,13 +97,41 @@ void ofApp::update(){
         );
     shader.end();
 
+    cam.update();
+    
+    
+
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofClear(0);
 
-        float radius = 2*(ofGetHeight()/5);
+    cam.beginLeft();
+        ofApp::drawScene();
+    cam.endLeft();
+    
+    
+    cam.beginRight();
+        ofApp::drawScene();
+    cam.endRight();
+
+    
+    cam.drawLeft(0, 0, ofGetWidth()/2, ofGetHeight()/2);
+    cam.drawRight(0, ofGetWidth()/2, ofGetWidth()/2, ofGetHeight()/2);
+    
+    if(bShowTimeline) {
+        timeline.draw();
+    }
+    
+//    ofDrawBitmapString(ofToString(ofGetFrameRate()), 20, 20);
+    
+//    gui.draw();
+}
+
+
+void ofApp::drawScene(){
+       float radius = 2*(ofGetHeight()/5);
     
 
         shader.begin();
@@ -128,14 +168,6 @@ void ofApp::draw(){
 
         ofSetColor(255, 255, 255, textOpacity);
         typeface.drawStringCentered("2", center.x, center.y);
-    
-    if(bShowTimeline) {
-        timeline.draw();
-    }
-    
-//    ofDrawBitmapString(ofToString(ofGetFrameRate()), 20, 20);
-    
-//    gui.draw();
 }
 
 
@@ -156,9 +188,16 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if(key == 't') {
-        bShowTimeline = !bShowTimeline;
+    
+    switch(key) {
+        case 't':
+            bShowTimeline = !bShowTimeline;
+            break;
+        case 'f':
+            ofToggleFullscreen();
+            break;
     }
+
 }
 
 //--------------------------------------------------------------
