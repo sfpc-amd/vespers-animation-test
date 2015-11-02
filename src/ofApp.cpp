@@ -38,8 +38,9 @@ void ofApp::setup(){
     
     timeline.play();
 
-	cam.setup(ofGetWidth(), ofGetHeight());
-	cam.setScale(1, -1, 1);
+	cam.setup(400, 400);
+	cam.setScale(1, 1, 1);
+//    cam.setTarget(center);
 	
 	cam.setPhysicalFocusDistance(120);
 	
@@ -97,16 +98,8 @@ void ofApp::update(){
         );
     shader.end();
 
-    cam.update();
+    cam.update(ofRectangle(0, 0, 400, 400));
     
-    
-
-}
-
-//--------------------------------------------------------------
-void ofApp::draw(){
-    ofClear(0);
-
     cam.beginLeft();
         ofApp::drawScene();
     cam.endLeft();
@@ -116,9 +109,17 @@ void ofApp::draw(){
         ofApp::drawScene();
     cam.endRight();
 
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+    ofClear(0);
+
+
+
     
-    cam.drawLeft(0, 0, ofGetWidth()/2, ofGetHeight()/2);
-    cam.drawRight(0, ofGetWidth()/2, ofGetWidth()/2, ofGetHeight()/2);
+    cam.drawLeft(0, 80, 400, 400);
+    cam.drawRight(400, 80, 400, 400);
     
     if(bShowTimeline) {
         timeline.draw();
@@ -131,6 +132,7 @@ void ofApp::draw(){
 
 
 void ofApp::drawScene(){
+    ofBackground(0);
        float radius = 2*(ofGetHeight()/5);
     
 
@@ -144,7 +146,7 @@ void ofApp::drawScene(){
                 ofPushMatrix();
                 ofSetColor(255, 255, 255, 0.5);
 
-                ofTranslate(center);
+//                ofTranslate(center);
 
                 ofPoint p1 = ofPoint(cos(ofDegToRad(0-90))*radius, sin(ofDegToRad(0-90))*radius, triangleZ);
                 ofPoint p2 = ofPoint(cos(ofDegToRad(120-90))*radius, sin(ofDegToRad(120-90))*radius, triangleZ);
@@ -157,17 +159,18 @@ void ofApp::drawScene(){
                 ofPopMatrix();
                 ofPopMatrix();
                 
-                ofLine(ofPoint(ofGetWidth()/2, 0, 0), p1 + center);
-                ofLine(ofPoint(ofGetWidth(), ofGetHeight(), 0), p2 + center);
-                ofLine(ofPoint(0, ofGetHeight(), 0), p3 + center);
+                ofLine(ofPoint(0, -400, 0), p1);
+                ofLine(ofPoint(400, 400, 0), p2);
+                ofLine(ofPoint(-400, 400, 0), p3);
             }
     
     
 
         shader.end();
 
-        ofSetColor(255, 255, 255, textOpacity);
-        typeface.drawStringCentered("2", center.x, center.y);
+        ofSetColor(255, 255, 255, 255);
+//        ofSetColor(255, 255, 255, textOpacity);
+//        typeface.drawStringCentered("2", 0, 0);
 }
 
 
