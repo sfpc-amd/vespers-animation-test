@@ -40,6 +40,7 @@ void ofApp::setup(){
 
 	cam.setup(400, 400);
 	cam.setScale(1, 1, 1);
+//    cam.disableMouseInput();
 //    cam.setTarget(center);
 	
 	cam.setPhysicalFocusDistance(120);

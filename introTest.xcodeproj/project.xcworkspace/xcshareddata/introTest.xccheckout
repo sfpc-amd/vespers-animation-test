@@ -18,6 +18,8 @@
 		<string>https://github.com/obviousjim/ofxTween.git</string>
 		<key>75CDA1866D04A7F39D98366B0AC626C55ACC4D73</key>
 		<string>https://github.com/sfpc-amd/vespers-animation-test.git</string>
+		<key>7A479C32A2264E9774DA0BC348F00DA96CD462F3</key>
+		<string>https://github.com/andyinabox/ofxStereoCamera.git</string>
 		<key>9306F8A4B5C13BDC4DDB4D5C22AC1335F4D819E8</key>
 		<string>https://github.com/andyinabox/ofxTimeline.git</string>
 		<key>999015EE524680C74335938659F70512196F22AD</key>
@@ -34,23 +36,25 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>252C6127C45A1F2D4943E6963066F98DFCDB451F</key>
-		<string>../../../../../addons/ofxTimecode</string>
+		<string>../../../addons/ofxTimecode</string>
 		<key>49ED704B24A08379C9709713E9A651DFA0CED0E3</key>
-		<string>../../../../../addons/ofxRange</string>
+		<string>../../../addons/ofxRange</string>
 		<key>6B5D1DE462D521A98972DF70F1147E20268C546A</key>
-		<string>../../../../../addons/ofxTween</string>
+		<string>../../../addons/ofxTween</string>
 		<key>75CDA1866D04A7F39D98366B0AC626C55ACC4D73</key>
 		<string>../..</string>
+		<key>7A479C32A2264E9774DA0BC348F00DA96CD462F3</key>
+		<string>../../../addons/ofxStereoCamera</string>
 		<key>9306F8A4B5C13BDC4DDB4D5C22AC1335F4D819E8</key>
-		<string>../../../../../addons/ofxTimeline</string>
+		<string>../../../addons/ofxTimeline</string>
 		<key>999015EE524680C74335938659F70512196F22AD</key>
-		<string>../../../../../addons</string>
+		<string>../../../addons</string>
 		<key>A6343E16BC2F648D0FEA647FB75CBADE0A25E0B8</key>
-		<string>../../../../../addons/ofxTextInputField</string>
+		<string>../../../addons/ofxTextInputField</string>
 		<key>BAD419ACBCA600B030D3D9761F4D428B387CAE4C</key>
-		<string>../../../../../addons/ofxCenteredTrueTypeFont</string>
+		<string>../../../addons/ofxCenteredTrueTypeFont</string>
 		<key>E0CB4C1C2522C94E4D03AC595BB2CF0D7F09B508</key>
-		<string>../../../../../addons/ofxMSATimer</string>
+		<string>../../../addons/ofxMSATimer</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/sfpc-amd/vespers-animation-test.git</string>
@@ -72,17 +76,17 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>75CDA1866D04A7F39D98366B0AC626C55ACC4D73</string>
+			<string>999015EE524680C74335938659F70512196F22AD</string>
 			<key>IDESourceControlWCCName</key>
-			<string>introTest</string>
+			<string>addons</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>999015EE524680C74335938659F70512196F22AD</string>
+			<string>75CDA1866D04A7F39D98366B0AC626C55ACC4D73</string>
 			<key>IDESourceControlWCCName</key>
-			<string>ofxAutoReloadedShader</string>
+			<string>introTest</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
@@ -107,6 +111,14 @@
 			<string>49ED704B24A08379C9709713E9A651DFA0CED0E3</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxRange</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7A479C32A2264E9774DA0BC348F00DA96CD462F3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxStereoCamera</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
