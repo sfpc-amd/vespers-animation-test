@@ -14,4 +14,4 @@ Todo
  - [ ] Research shaders for TTF
  - [ ] Set shader colors -- should do a sunset sequence (reuse other shader? why not??)
  - [x] Reintroduce timeline
- - [ ] Integrate into main vespers project
+ - [x] Integrate into main vespers project
